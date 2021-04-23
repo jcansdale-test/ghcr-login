@@ -1,0 +1,12 @@
+name: Login ghcr.io
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: docker login ghcr.io -u token -p ${{ github.token }}
