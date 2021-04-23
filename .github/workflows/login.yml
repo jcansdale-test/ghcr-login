@@ -8,5 +8,9 @@ jobs:
   login:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        count: [0,1,2,3,4,5,6,7]      
+
     steps:
       - run: docker login ghcr.io -u token -p ${{ github.token }}
